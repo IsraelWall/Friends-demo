@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Friends Demo - Page 7</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f0f8ff; }
+    h1 { text-align: center; }
+    .flashcards { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .card { border: 1px solid #ccc; padding: 10px; text-align: center; background: #fff; border-radius: 8px; width: 120px; }
+    .alphabet { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 20px; }
+    .letter-btn { padding: 10px 12px; border: none; background: #e0e0e0; border-radius: 5px; cursor: pointer; }
+    .letter-btn.correct { background: #90ee90; }
+    .letter-btn.wrong { background: #ff7f7f; }
+  </style>
+</head>
+<body>
+  <h1>יחידה 6.1 - האות S</h1>
+  <p style="text-align: center;">למדו את המילים עם הצליל S. לחצו על תמונה לשמיעת המילה (הדגמה בלבד).</p>
+  <div class="flashcards">
+    <div class="card">Sam</div>
+    <div class="card">sad</div>
+    <div class="card">small</div>
+    <div class="card">student</div>
+    <div class="card">socks</div>
+    <div class="card">sister</div>
+    <div class="card">sand</div>
+  </div>
+
+  <h2 style="text-align: center; margin-top: 30px;">Let's Find the Letter S!</h2>
+  <p style="text-align: center;">לחצו על האות S באלפבית</p>
+  <div class="alphabet" id="alphabet"></div>
+
+  <script>
+    const alphabet = document.getElementById("alphabet");
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").forEach(letter => {
+      const btn = document.createElement("button");
+      btn.textContent = letter;
+      btn.className = "letter-btn";
+      btn.onclick = () => {
+        if (letter === "S") {
+          btn.classList.add("correct");
+        } else {
+          btn.classList.add("wrong");
+        }
+      };
+      alphabet.appendChild(btn);
+    });
+  </script>
+</body>
+</html>
